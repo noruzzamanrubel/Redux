@@ -94,7 +94,7 @@ store.subscribe(() => {
     console.log(store.getState());
 })
 
-store.dispatch(addProduct('product4',));
+// store.dispatch(addProduct('product4',));
 
 store.dispatch(addCart('cart4'));
 

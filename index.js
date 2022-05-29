@@ -4,7 +4,8 @@
 // reducer 
 // store
 
-const { createStore } = require('redux');
+const { createStore, applyMiddleware } = require('redux');
+const { default: logger } = require('redux-logger');
 
 // define constants
 const INCREMENT = 'INCREMENT';
@@ -57,18 +58,13 @@ const reducer = (state = initialState, action) => {
 }
 
 //store
-const store = createStore(reducer);
+const store = createStore(reducer, applyMiddleware(logger));
 
 store.subscribe(() => {
     console.log(store.getState());
 })
 
-// store.dispatch(increment());
-// store.dispatch(increment());
-// store.dispatch(increment());
-// store.dispatch(decrement());
-// store.dispatch(reset());
-// store.dispatch(increment());
+
 store.dispatch(increment('Rubel Ahmed 2'));
-store.dispatch(increment('Rubel Ahmed 3'));
-store.dispatch(increment('Rubel Ahmed 4'));
+// store.dispatch(increment('Rubel Ahmed 3'));
+// store.dispatch(increment('Rubel Ahmed 4'));
