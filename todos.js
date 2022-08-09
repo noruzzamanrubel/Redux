@@ -62,6 +62,7 @@ const todosReducer = (state = initialState, action) => {
 
 //async action creator
 const fetchData = () => {
+
     return (dispatch) => {
         dispatch(todosRequest());
         axios
