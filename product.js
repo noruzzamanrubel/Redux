@@ -82,8 +82,8 @@ const cartReducer = (state = cartState, action) => {
 
 //combine reducer
 const rootReducer = combineReducers({
-    Product: productReducer,
-    Cart: cartReducer
+    productReducer,
+    cartReducer
 })
 
 
@@ -94,7 +94,18 @@ store.subscribe(() => {
     console.log(store.getState());
 })
 
-// store.dispatch(addProduct('product4',));
+store.dispatch(addProduct('product4',));
+store.dispatch(addProduct('product5',));
+store.dispatch(addProduct('product6',));
+store.dispatch(addProduct('product7',));
+// store.dispatch(getProducts());
 
+store.dispatch(addCart('cart4'));
+store.dispatch(addCart('cart4'));
+store.dispatch(addCart('cart4'));
+store.dispatch(addCart('cart4'));
+store.dispatch(addCart('cart4'));
+store.dispatch(addCart('cart4'));
+store.dispatch(addCart('cart4'));
 store.dispatch(addCart('cart4'));
 

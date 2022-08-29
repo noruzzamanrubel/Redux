@@ -67,13 +67,13 @@ const fetchData = () => {
         dispatch(todosRequest());
         axios
             .get(API_URL)
-            .then(response => {
-                const todos = response.data;
+            .then(res => {
+                const todos = res.data;
                 const title = todos.map((todo) => todo.title);
                 dispatch(todosSuccess(title));
             })
-            .catch(error => {
-                const errorMsg = error.message;
+            .catch(err => {
+                const errorMsg = err.message;
                 dispatch(todosFailure(errorMsg));
             });
     }
